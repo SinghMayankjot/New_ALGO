@@ -1,0 +1,75 @@
+Get Case info(GET Request): http://localhost:9999/v1/case
+Example output: {"name":"ALGO2e v2","period":1,"tick":287,"ticks_per_period":300,"total_periods":1,"status":"ACTIVE","is_enforce_trading_limits":false}
+
+Get Trader info(GET Request): http://localhost:9999/v1/trader
+Example output: {
+    "trader_id": "Ninja",
+    "first_name": "MJ",
+    "last_name": "S",
+    "nlv": 0.0
+}
+
+Get Trading Limits(GET Request): http://localhost:9999/v1/limits
+Example output: [
+    {
+        "name": "LIMIT-STOCK",
+        "gross": 0.0,
+        "net": 0.0,
+        "gross_limit": 25000,
+        "net_limit": 25000,
+        "gross_fine": 1.0,
+        "net_fine": 1.0
+    }
+]
+
+Get News(GET Request): http://localhost:9999/v1/news (?since=''&limit='')
+Parameters: since(Give News id after which news is required), limit(Number of news needed, default is 20)
+Example output: [
+    {
+        "news_id": 1,
+        "period": 1,
+        "tick": 1,
+        "ticker": "",
+        "headline": "Welcome to the Alogithmic Market Making: Extensions case",
+        "body": ""
+    }
+]
+
+Get list of assets(GET Request): http://localhost:9999/v1/assets (?ticker='')
+Paramters: ticker
+Example output: [
+  {
+    "ticker": "string",
+    "type": "CONTAINER",
+    "description": "string",
+    "total_quantity": 0,
+    "available_quantity": 0,
+    "lease_price": 0,
+    "convert_from": [
+      {
+        "ticker": "CL",
+        "quantity": 10
+      }
+    ],
+    "convert_to": [
+      {
+        "ticker": "CL",
+        "quantity": 10
+      }
+    ],
+    "containment": {
+      "ticker": "CL",
+      "quantity": 10
+    },
+    "ticks_per_conversion": 0,
+    "ticks_per_lease": 0,
+    "is_available": true,
+    "start_period": 0,
+    "stop_period": 0
+  }
+]
+
+Get activity for assets(GET Request): 
+
+
+
